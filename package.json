@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/1pandafly/railsware#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.20.2",
     "browser-sync": "^2.27.11",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
