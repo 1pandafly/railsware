@@ -12,6 +12,11 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+define('RAILSWARE_DIR_CSS', get_template_directory_uri() . '/dist/css');
+define('RAILSWARE_DIR_JS', get_template_directory_uri() . '/dist/js');
+define('RAILSWARE_DIR_IMG', get_template_directory_uri() . '/dist/images');
+define('RAILSWARE_DIR_LIBS', get_template_directory_uri() . '/dist/libs');
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -138,7 +143,8 @@ add_action( 'widgets_init', 'railsware_widgets_init' );
  * Enqueue scripts and styles.
  */
 function railsware_scripts() {
-
+	wp_enqueue_style('main-styles', RAILSWARE_DIR_CSS . '/main.min.css', array(), filemtime(get_theme_file_path('/dist/css/main.min.css')));
+	wp_enqueue_script('frontpage-js', RAILSWARE_DIR_JS . '/main.min.js', array(), filemtime(get_theme_file_path('/dist/js/main.min.js')));
 }
 add_action( 'wp_enqueue_scripts', 'railsware_scripts' );
 
